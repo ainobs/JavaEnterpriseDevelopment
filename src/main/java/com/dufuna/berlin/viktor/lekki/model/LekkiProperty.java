@@ -117,10 +117,10 @@ public class LekkiProperty {
         this.validTo = validTo;
     }
 
-    @Override
-    public String toString() {
-        return propertyId + "," + propertyAddress  + "," + propertyType;
-    }
+@Override
+public String toString() {
+    return propertyId + "," + propertyAddress + "," + propertyType + "," + numBedroom + "," + sittingRooms + "," + numKitchen + "," + numBathroom + "," + numToilet + "," + propertyOwner + "," + description;
+}
 
     @Override
     public boolean equals(Object o) {
@@ -133,5 +133,4 @@ public class LekkiProperty {
     public int hashCode() {
         return Objects.hash(getPropertyId());
     }
-
 }
