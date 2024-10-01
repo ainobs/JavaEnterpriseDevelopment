@@ -3,14 +3,22 @@ package com.dufuna.berlin.viktor.tax.service;
 import com.dufuna.berlin.viktor.tax.TaxBracket;
 import com.dufuna.berlin.viktor.tax.repository.TaxBracketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class TaxCalculatorServiceImplementation implements TaxCalculatorService {
 
+    //@Autowired
+    //private TaxBracketRepository taxBracketRepository;
+    private final TaxBracketRepository taxBracketRepository;
+
     @Autowired
-    private TaxBracketRepository taxBracketRepository;
+    public TaxCalculatorServiceImplementation(TaxBracketRepository taxBracketRepository) {
+        this.taxBracketRepository = taxBracketRepository;
+    }
     @Override
     public List<TaxBracket> getAllTaxBracket() {
         return taxBracketRepository.findAll();
